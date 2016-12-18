@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+	var a,b;
+	function setValues()
+	{
+		a = Number(document.getElementById("a").value);
+		b = Number(document.getElementById("b").value);
+	}
+	function sum()
+	{
+		setValues();
+		result = a+b;
+		alert("The sum equals to " + result);
+	}
+	function sub()
+	{
+		setValues();
+		result = a-b;
+		alert("The subtraction equals to " + result);
+	}
+	function div()
+	{
+		setValues();
+		result = a/b;
+		alert("The division equals to " + result);
+	}
+	function mult()
+	{
+		setValues();
+		result = a*b;
+		alert("The multiplication equals to " + result);
+	}
+
+	//for using enter as input
+	var new = document.getElementById("result");
+	new.addEventListener("keydown",function(e){
+		if(e.keycode === 13){
+			alert("ans is");
+			form.result.value = eval(form.result.value);
+		}
+	}
+	</script>
+
+	<title>Calci</title>
+</head>
+<body>
+	<div>
+		<input id="a" type="text"/>
+		<input id="b" type="text"/>
+		<input type="button" onclick="sum()" value="sum"/>
+		<input type="button" onclick="sub()" value="sub"/>
+		<input type="button" onclick="div()" value="div"/>
+		<input type="button" onclick="mult()" value="mult"/>
+	</div><br><br>
+	<div id="calc">
+	<form name="form">
+		<input type="text" name="result" id="result" value=''/ autofocus>
+		<br/>
+		
+		<input type="button" value=" 1 " onclick="form.result.value += '1'"/>
+		<input type="button" value=" 2 " onclick="form.result.value += '2'"/>
+		<input type="button" value=" + " onclick="form.result.value += '+'"/>
+		<br/>
+
+		<input type="button" value=" 3 " onclick="form.result.value += '3'"/>
+		<input type="button" value=" 4 " onclick="form.result.value += '4'"/>
+		<input type="button" value=" - " onclick="form.result.value += '-'"/>
+		<br/>
+		
+		<input type="button" value=" 5 " onclick="form.result.value += '5'"/>
+		<input type="button" value=" 6 " onclick="form.result.value += '6'"/>
+		<input type="button" value=" * " onclick="form.result.value += '*'"/>
+		<br/>
+		
+		<input type="button" value=" 7 " onclick="form.result.value += '7'" onfocus/>
+		<input type="button" value=" 8 " onclick="form.result.value += '8'" active/>
+		<input type="button" value=" / " onclick="form.result.value += '/'"/>
+		<br/>
+		
+		<input type="button" value=" 9 " onclick="form.result.value += '9'"/>
+		<input type="button" value=" 0 " onclick="form.result.value += '0'"/>
+		<input type="button" value=" c " onclick="form.result.value = ' '"/>
+		<input type="button" value=" = " onclick="form.result.value = eval(form.result.value)"/>
+		<br/>
+	
+	</form>
+</div>
+</body>
+</html>
